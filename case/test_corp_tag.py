@@ -16,7 +16,7 @@ class TestCorpTap:
     ], ids=['group_id', 'tag_id'])
     def test_get_corp_tag_list(self, data, check):
         r = self.corptap.get_corp_tag_list(**data)
-        assert r.status_code == 200
+        assert r.status_code == 300
         assert r.json()["errcode"] == check
 
     @pytest.mark.smoke
@@ -29,7 +29,7 @@ class TestCorpTap:
     ], ids=["英文", "字符", "数字", "大写英文", "中文"])
     def test_edit_corp_tag(self, id, name, check):
         r = self.corptap.edit_corp_tag(id, name)
-        assert r.status_code == 300
+        assert r.status_code == 200
         assert r.json()["errcode"] == check
 
     @pytest.mark.smoke
