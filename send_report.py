@@ -1,3 +1,4 @@
+import datetime
 import json
 
 import requests
@@ -17,10 +18,11 @@ class DingRobot:
     def send_report(self):
         headers = {"Content-Type": "application/json;charset=utf-8"}
         content = {
+
             "msgtype": "link",
             "link": {
                 "text": "账号jenkisn5,密码123456",
-                "title": "猛犸象" + "宝贝们接口报错了",
+                "title": "猛犸象" + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                 "picUrl": "",
                 "messageUrl": "http://jenkisn5:123456@8.129.214.240:9000/job/wework/allure/"
             }
