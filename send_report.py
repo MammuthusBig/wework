@@ -1,5 +1,6 @@
 import datetime
 import json
+from time import sleep
 
 import requests
 
@@ -16,8 +17,9 @@ class DingRobot:
         return case_error
 
     def send_report(self):
+        sleep(5)
         error = self.get_allure()
-        if error >0:
+        if error > 0:
             headers = {"Content-Type": "application/json;charset=utf-8"}
             content = {
                 "msgtype": "link",
