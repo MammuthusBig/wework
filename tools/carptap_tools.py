@@ -12,7 +12,6 @@ class JsonPath:
         except:
             pass
 
-
 # if __name__ == '__main__':
 #     id = JsonPath().get_corp_tag_id("$.[?(@.name=='小王八')]")
 #     print(id)
