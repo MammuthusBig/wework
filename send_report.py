@@ -9,9 +9,9 @@ class DingRobot:
         self.allure = "http://jenkisn5:123456@8.129.214.240:9000/job/wework/allure/widgets/suites.json"
         self.ding = 'https://oapi.dingtalk.com/robot/send?access_token=' \
                     'a5eb6e38be242dcf3a0ceaa1035a8c3093430de8da7384bf0b710711d4885c49'
-        self.error = self.get_allure()
+        self.error = self.get_allure_error()
 
-    def get_allure(self):
+    def get_allure_error(self):
         jenkins_data = requests.get(self.allure).json()
         case_error = jenkins_data["items"][0]["statistic"]["failed"]
         return case_error
