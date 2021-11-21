@@ -16,9 +16,9 @@ class TestCorpTap:
     ], ids=['group_id', 'tag_id'])
     def test_get_corp_tag_list(self, data, check):
         r = self.corptap.get_corp_tag_list(**data)
-        assert r.status_code == 300
+        assert r.status_code == 200
         assert r.json()["errcode"] == check
-
+    data=[]
     @pytest.mark.smoke
     @pytest.mark.parametrize('id,name,check', [
         ["et-QOqCQAA3DP3yocdyRxIg5SbxOW9ZQ", "xxx", 0],
